@@ -1,0 +1,148 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+    color: #4d4d4d;
+    min-width: 230px;
+    max-width: 550px;
+}
+
+h1 {
+    color: rgba(175, 47, 47, 0.15);
+    width: 100%;
+    font-size: 100px;
+}
+
+.destroy {
+    float: right;
+}
+
+.todoAdd {
+    width: 100%;
+    font-size: 24px;
+    color: inherit;
+    padding: 16px 16px;
+    padding-left: 64px;
+    border: 1px solid #faefef;
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.0.003);
+}
+
+.tasks li .edit {
+    display: none;
+}
+
+.tasks {
+    background-color: #ffffff;
+}
+
+.tasks.completed li:not(.completed) {
+    display: none;
+}
+
+.tasks.active li.completed {
+    display: none;
+}
+
+.tasks li.completed label {
+    color: #d9d9d9;
+    text-decoration: line-through;
+}
+
+.tasks li {
+    list-style: none;
+    font-size: 24px ;
+    color: #4d4d4d;
+    text-align: left;
+    padding: 20px;
+
+}
+
+/* .completed {
+    text-decoration:line-through;
+} */
+
+
+
+.footer {
+    background-color: #ffffff;
+    border: 1px solid #faefef;
+    padding: 10px;
+    text-align:justify;
+    display: flex;
+    gap: 98px;
+}
+
+
+.option label input {
+    display: none;
+}
+
+.option label:has(:checked) {
+    border-color:rgb(197, 150, 132);
+}
+
+.filters {
+    display: flex;
+}
+
+.filters li {
+    list-style-type: none;
+}
+
+.filters label {
+    color: inherit;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.filters label input {
+    display: none;
+}
+
+.filters label:has(:checked) {
+    border-color: rgba(175, 47, 47, 1);
+}
+.view input{
+    display: none;
+}
+.view button{
+    display: inline;
+    border:none;
+    color: red;
+    font-size: large;
+    font-weight: bolder;
+    background-color: transparent;
+    margin: inline 5px; 
+    cursor: pointer;
+}
+.tasks li .edit{
+	margin: 0;
+	width: 100%;
+	font-size: 24px;
+	font-family: inherit;
+	font-weight: inherit;
+	line-height: 1.4em;
+	border: 0;
+	color: inherit;
+	padding: 6px;
+	border: 1px solid #999;
+	box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
