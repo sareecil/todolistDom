@@ -20,6 +20,7 @@ function addTodo(e) {
     </li>`;
     todoAdd.value = "";
 
+    saveData();
     bindClickActions();
 }
    
@@ -34,20 +35,23 @@ for (const filter of document.querySelectorAll(".filters input")) {
 
 function completedTodo() {
     this.parentElement.parentElement.classList.toggle('completed');
+    saveData()
 }
 
 function removeTodo() {
     this.parentElement.parentElement.remove();
+    saveData()
 }
 
 function showTodoEdit() {
     this.classList.add('editing');
-    // this.style.display="none"
+    this.style.display="none"
     // this.nextElementSibling.nextElementSibling.style.display="inline"
     const currValue = this.nextElementSibling.nextElementSibling.value;
     this.nextElementSibling.value = '';
     this.nextElementSibling.value = currValue;
     this.nextElementSibling.focus();
+    saveData()
 }
 
 function showTodoEdit2(element) {
@@ -60,6 +64,8 @@ function editTodo(e) {
     if(e.key === 'Enter') {
         this.previousElementSibling.previousElementSibling.innerHTML = this.value;
         this.parentElement.classList.remove('editing');
+        this.previousElementSibling.style.display = "block";
+        saveData()
     }
 }
 
@@ -93,6 +99,16 @@ function bindClickActions() {
     document.querySelectorAll("label").forEach(x => x.addEventListener('dblclick', showTodoEdit));
 
     document.querySelectorAll('.edit').forEach(x => x.addEventListener('keydown', editTodo));
-
+    saveData();
 }
+
+function saveData() {
+    localStorage.setItem("data", tasks.innerHTML);
+}
+
+function data() {
+    tasks.innerHTML = localStorage.getItem("data")
+}
+
+data();
 bindClickActions()
